@@ -1,25 +1,17 @@
 #!/usr/bin/python3
 
 def calc(A, B):
-    """
-    AとBの積を計算します。ただし、次の条件を満たす場合のみ計算を行います:
-    - AとBは数値である
-    - 0 < A < B < 1000
-    条件を満たさない場合、-1を返します。
-    """
     try:
-        # AとBを数値に変換
         a = float(A)
         b = float(B)
-    except ValueError:
-        # 数値変換に失敗した場合は-1を返す
+    except (ValueError, TypeError):
         return -1
 
-    # 条件をチェック
     if 0 < a < b < 1000:
         return a * b
     else:
         return -1
+
 
 
 def main():
